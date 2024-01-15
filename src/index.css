@@ -34,15 +34,16 @@ ul, nav{
 h1, h2, h3, h4, h5, h6{
   margin: 0;
 
-  font-family: "Space";
+  font-family: "Bold";
 }
 
 a {
 display: inline-block;
 
+font-family: "Bold";
+
   text-decoration: none;
 
-  font-family: "Space";
 
 }
 
@@ -57,5 +58,5 @@ img{
 p{
   margin: 0;
 
-  font-family: "Lex";
+  font-family: "Medium";
 }

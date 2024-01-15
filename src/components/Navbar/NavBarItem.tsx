@@ -1,8 +1,11 @@
+import { INav } from '../../utils/interfaces';
 import * as SC from './NavBarStyles'
 
-const NavBarItem:React.FC = ({id, content, path}) => {
-    return ( <SC.Item>
-        <SC.Link to={path}>{content}</SC.Link>
+const NavBarItem:React.FC<INav> = ({ content, path}) => {
+
+
+    return ( <SC.Item content={content}>
+        <SC.Link content={content} to={path}>{content}</SC.Link>
     </SC.Item> );
 }
  
