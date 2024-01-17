@@ -12,7 +12,7 @@ import PlayBoard from "../PlayBoard/PlayBoard";
 
 const Board: React.FC = () => {
   const [isMenu, setIsMenu] = useState<boolean>(false);
-  const [coord, setCoord] = useState({x:0, y: 0});
+  const [coord, setCoord] = useState<any>([]);
 
   const menuHandler = () => {
     setIsMenu(!isMenu);
@@ -25,9 +25,13 @@ const Board: React.FC = () => {
     const x = Math.round(evt.pageX / (34 + 13));
     const y = Math.round((evt.pageY - 271) / (34 + 13));
 
-    setCoord({x, y})
+    if (coord.length === 0) {
+        setCoord([{x, y}])
+    } else {
+        setCoord((prev:any) => [...prev,{x, y}])
+    }
   };
-
+  
   return (
     <SC.BoardStyled>
       <BoardHeader handler={menuHandler} />

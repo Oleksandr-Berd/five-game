@@ -35,11 +35,17 @@ align-items: center;
 }
 `
 
-export const Cell = styled.li`
+export const Cell = styled.li<IStyles>`
 width: 34px;
 height: 34px;
 
+background-image: url(${props => props.img});
+background-size: cover;
+
+border: none;
+border-radius: 50%;
+
 &:not(:last-child){
-    margin-right: 13px;
+    margin-right: 12.72px;
 }
 `

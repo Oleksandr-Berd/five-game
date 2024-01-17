@@ -2,15 +2,11 @@ import * as SC from "./PlayBoardStyles";
 
 import boardWhiteSmall from "../../assets/images/board-layer-white-small.svg";
 import boardBlackSmall from "../../assets/images/board-layer-black-small.svg";
-import circle from "../../assets/images/counter-red-small.svg";
 import { matrix } from "../../db/db";
+import PlayBoardItem from "./Item";
+import { IBoard } from "../../utils/interfaces";
 
-type Props = {
-  handler: (evt: any) => void;
-  coord: { x: number; y: number };
-};
-
-const PlayBoard: React.FC<Props> = ({ handler, coord }) => {
+const PlayBoard: React.FC<IBoard> = ({ handler, coord }) => {
   
   return (
     <SC.PlayBoard
@@ -21,8 +17,8 @@ const PlayBoard: React.FC<Props> = ({ handler, coord }) => {
     >
      <SC.Matrix>
        {
-        matrix.map(row => <SC.Row>
-            {row.map(el => <SC.Cell></SC.Cell>)}
+        matrix.map((row, colIdx ) => <SC.Row key={(colIdx + 1) *15}>
+            {row.map((el, rowIdx) => <PlayBoardItem key={rowIdx} coord={coord} idx={{xIdx: rowIdx + 1, yIdx:colIdx + 1}}></PlayBoardItem>)}
         </SC.Row>)
        }
      </SC.Matrix>

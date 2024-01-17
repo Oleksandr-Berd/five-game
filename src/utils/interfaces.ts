@@ -19,7 +19,9 @@ export interface ILogo {
     location: "home" | "board"
 }
 
-export interface ICoord {
-    x: number;
-    y:number;
+export interface IBoard {
+    handler: (evt: any) => void;
+    coord: any;
+//   coord: { x: number; y: number };
+  idx?:{xIdx:number, yIdx:number};
 }
