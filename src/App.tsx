@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import SharedLayout from "./layouts/SharedLayout/SharedLayout";
 import MainMenu from "./components/MainMenu/MainMenu";
+import Board from "./components/Board/Board";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <SharedLayout>
         <Routes>
           <Route path="/" element={<MainMenu />}></Route>
+          <Route path="board" element={<Board/>}/>
         </Routes>
       </SharedLayout>
     </>

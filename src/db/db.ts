@@ -6,7 +6,7 @@ export const mainMenuBtn = [
     },
     {
         id:2,
-        content:"play with player",
+        content:"play vs player",
         path:"board"
     },
     {

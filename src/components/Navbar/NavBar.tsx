@@ -5,11 +5,11 @@ import NavBarItem from './NavBarItem';
 
 const NavBar: React.FC = () => {
   return (
-    <nav>
+    <SC.List>
       {mainMenuBtn.map(({ id, content, path }) => (
        <NavBarItem key={id} content={content} path={path}/>
       ))}
-    </nav>
+    </SC.List>
   );
 };
 

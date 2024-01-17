@@ -5,7 +5,7 @@ import NavBar from "../Navbar/NavBar";
 
 const MainMenu:React.FC = () => {
     return ( <SC.MainMenuStyled>
-        <Logo/>
+        <Logo location='home'/>
         <NavBar/>
     </SC.MainMenuStyled> );
 }

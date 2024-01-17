@@ -1,9 +1,12 @@
-import {ReactComponent as LogoSvg} from '../../assets/images/logo.svg'
+import * as SC from './LogoStyles'
 
-const Logo:React.FC = () => {
-    return ( <div>
+import {ReactComponent as LogoSvg} from '../../assets/images/logo.svg'
+import { ILogo } from '../../utils/interfaces';
+
+const Logo:React.FC<ILogo> = ({location}) => {
+    return ( <SC.LogoStyled location={location}>
         <LogoSvg/>
-    </div> );
+    </SC.LogoStyled> );
 }
  
 export default Logo;
