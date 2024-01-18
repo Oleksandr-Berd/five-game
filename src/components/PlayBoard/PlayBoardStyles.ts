@@ -6,9 +6,8 @@ export const PlayBoard = styled.ul<IStyles>`
 width: 335px;
 height: 310px;
 
-display: grid;
-grid-template-columns: repeat(1fr, 7);
-grid-template-rows: repeat(1fr, 6);
+margin-left: auto;
+margin-right: auto;
 
 background-image: url(${props => props.img2}), url(${props => props.img});
 

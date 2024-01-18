@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import * as SC from './PlayBoardStyles'
 
 import { IBoard } from '../../utils/interfaces';
@@ -6,14 +8,13 @@ import redCellSmall from '../../assets/images/counter-red-small.svg'
 
 const PlayBoardItem:React.FC<Partial <IBoard>> = ({coord, idx}) => {
 
-const {x, y} = coord!;
 const {xIdx, yIdx} = idx!;
 
 
-const matchCells = coord.find((el:any) => el.x === xIdx && el.y === yIdx)
+let matchCells
 
-console.log(matchCells);
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
+useMemo(() => matchCells = coord.find((el:any) => el.x === xIdx && el.y === yIdx), [coord])
 
     return ( <SC.Cell img={matchCells ? redCellSmall : null}></SC.Cell> );
 }

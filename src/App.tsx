@@ -4,12 +4,13 @@ import MainMenu from "./components/MainMenu/MainMenu";
 import Board from "./components/Board/Board";
 
 function App() {
+
   return (
     <>
       <SharedLayout>
         <Routes>
           <Route path="/" element={<MainMenu />}></Route>
-          <Route path="board" element={<Board/>}/>
+          <Route path="board/:mode" element={<Board/>}/>
         </Routes>
       </SharedLayout>
     </>

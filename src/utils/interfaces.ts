@@ -22,6 +22,9 @@ export interface ILogo {
 export interface IBoard {
     handler: (evt: any) => void;
     coord: any;
-//   coord: { x: number; y: number };
   idx?:{xIdx:number, yIdx:number};
+}
+
+export interface IMode {
+mode: string,
 }

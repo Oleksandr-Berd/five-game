@@ -51,6 +51,9 @@ border-bottom: 10px solid #000;
 }
 
 & >h3{
+
+    text-transform: uppercase;
+
     font-size: 16px;
 }
 

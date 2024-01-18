@@ -2,12 +2,12 @@ export const mainMenuBtn = [
     {
         id:1,
         content: "play vs cpu",
-        path:"board"
+        path:"board/cpu"
     },
     {
         id:2,
         content:"play vs player",
-        path:"board"
+        path:"board/player"
     },
     {
         id:3,
