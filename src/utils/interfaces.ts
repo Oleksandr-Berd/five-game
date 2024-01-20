@@ -1,7 +1,7 @@
 export interface IStyles {
     img:string | null;
     img2?:string;
-    coord?:{x:number, y:number},
+    coord?:{x:number, y:number, player:IPlayer},
 
 }
 
@@ -28,3 +28,11 @@ export interface IBoard {
 export interface IMode {
 mode: string,
 }
+
+export type IPlayer =
+    "player1" | "player2" | "cpu"
+
+
+    export interface IActive {
+        activePlayer:IPlayer;
+    }
