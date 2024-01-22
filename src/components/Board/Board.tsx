@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import * as SC from "./BoartStyles";
 
@@ -21,26 +21,45 @@ const Board: React.FC = () => {
 
   const mode = pathname.split("/").reverse()[0];
 
-  const menuHandler = () => {
-    setIsMenu(!isMenu);
-  };
+  const test = () => {
+
+    const player1 = coord.filter((el:any)=> el.player === "player1")
+
+    console.log(player1);
+    
+
+   
+  }
+
+  useEffect(() => {
+    test()
+  }, [coord])
+  
+console.log(test());
+
+
+  function menuHandler() {
+        setIsMenu(!isMenu);
+    }
 
   const handleMove = (evt: any) => {
     const x = Math.round(evt.pageX / (34 + 13));
     const y = Math.round((evt.pageY - 271) / (34 + 13));
 
     if (coord.length === 0 && activePlayer === "player1" && mode === "player") {
-      setCoord([{ x, y, player:"player1" }]);
+      setCoord([{ x, y, player: "player1" }]);
       setActivePlayer("player2");
-    } else if (coord.length !== 0 && activePlayer === "player1" && mode === "player"){
-
-      setCoord((prev: any) => [...prev, { x, y, player:"player1" }]);
-      setActivePlayer("player2")
-    } else{
-        setCoord((prev: any) => [...prev, { x, y, player:"player2" }]);
-      setActivePlayer("player1") 
+    } else if (
+      coord.length !== 0 &&
+      activePlayer === "player1" &&
+      mode === "player"
+    ) {
+      setCoord((prev: any) => [...prev, { x, y, player: "player1" }]);
+      setActivePlayer("player2");
+    } else {
+      setCoord((prev: any) => [...prev, { x, y, player: "player2" }]);
+      setActivePlayer("player1");
     }
-    
   };
 
   return (
@@ -53,7 +72,7 @@ const Board: React.FC = () => {
         activePlayer={activePlayer}
       />
       <Rectangle />
-      <Timer />
+      <Timer activePlayer={activePlayer} />
     </SC.BoardStyled>
   );
 };

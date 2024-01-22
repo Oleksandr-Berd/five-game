@@ -20,7 +20,6 @@ let matchCells:any
 useMemo(() => matchCells = coord.find((el:any) => el.x === xIdx && el.y === yIdx), [coord])
 
 
-
     return ( <SC.Cell img={matchCells && matchCells.player === "player1" ? redSmall : matchCells && matchCells.player !== "player1" ? yellowSmall : null}></SC.Cell> );
 }
  
